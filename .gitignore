@@ -1,0 +1,18 @@
+# Nix build outputs (`nix build` symlinks: result, result-man, ...)
+result
+result-*
+
+# direnv / nix-direnv cache
+.direnv
+
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Claude Code per-user settings
+.claude/settings.local.json
