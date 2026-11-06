@@ -29,6 +29,9 @@ in
     nix-info
     nixpkgs-fmt
 
+    # Secret management
+    sops
+    age # Encryption backend for sops (`age-keygen` to create a key)
 
     # Cloud
     awscli2
