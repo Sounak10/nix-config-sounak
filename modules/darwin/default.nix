@@ -4,6 +4,7 @@
   imports = [
     ./common
     ./admin.nix
+    ./homebrew.nix
   ];
 
   # Use TouchID for `sudo` authentication

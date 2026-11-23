@@ -1,14 +1,4 @@
-{ flake, pkgs, lib, ... }:
-let
-  # `nixpkgs.*` options are disabled in home-manager when `useGlobalPkgs` is set,
-  # so unfree packages come from their own nixpkgs instance.
-  unfreePkgs = import flake.inputs.nixpkgs {
-    inherit (pkgs.stdenv.hostPlatform) system;
-    config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-      "claude-code"
-    ];
-  };
-in
+{ pkgs, ... }:
 {
   # Nix packages to install to $HOME
   #
@@ -52,10 +42,6 @@ in
     jq.enable = true;
     # Install btop https://github.com/aristocratos/btop
     btop.enable = true;
-    # Claude Code CLI https://github.com/anthropics/claude-code
-    claude-code = {
-      enable = true;
-      package = unfreePkgs.claude-code;
-    };
+    # Claude Code is installed via Homebrew (see modules/darwin/homebrew.nix)
   };
 }
