@@ -15,7 +15,7 @@
 
     # Nix dev
     cachix
-    nil # Nix language server
+    nixd # Nix language server (evaluates nixpkgs, so pkgs./lib. complete)
     nix-info
     nixpkgs-fmt
 
